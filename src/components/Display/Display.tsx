@@ -5,16 +5,11 @@ interface DisplayProps {
 }
 
 function Display(props: DisplayProps) {
-  const { value } = props;
-
-  const calculatorButtons: string[] = ['AC', '+/-', '%', '÷', '×', '+', '-'];
 
   return (
-    <div className="flex h-20 items-center justify-end  px-4 py-2 text-3xl font-medium text-white">
+    <div className="flex items-center justify-end m-2 px-4 py-2 text-6xl font-medium text-white">
       <h1>
-        {' '}
-        {!calculatorButtons.includes(props.value) &&
-          props.value.replace(/[^\d.]/g, '')}
+        {props.value}
       </h1>
     </div>
   );
