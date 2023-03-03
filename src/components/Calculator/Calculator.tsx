@@ -88,11 +88,10 @@ function Calculator() {
 
     
   };
-  
 
   return (
     <div className="flex h-screen items-center justify-center font-serif">
-      <div className="flex h-2/3 w-3/4 max-w-sm flex-col items-end justify-end rounded-lg bg-black shadow-xl">
+      <div className="flex h-2/3 w-3/4 max-w-sm  max-[375px]:h-3/5 flex-col items-end justify-end rounded-lg bg-black shadow-xl">
         <Display value={displayValue} />
         <CalculatorButtons onClick={handleButtonClick} />
       </div>
