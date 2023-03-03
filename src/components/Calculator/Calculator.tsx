@@ -70,6 +70,11 @@ function Calculator() {
           setPreviousValue('');
         }
         break;
+      case '.':
+        if (!displayValue.includes('.')) {
+          setDisplayValue(prevValue => prevValue + '.');
+        }
+        break; 
       default:
         setDisplayValue(prevValue => {
           if (prevValue === '0') {
@@ -87,7 +92,7 @@ function Calculator() {
 
   return (
     <div className="flex h-screen items-center justify-center font-serif">
-      <div className="flex h-2/3 w-3/4 max-w-sm flex-col items-end justify-end rounded-lg bg-[#212121] shadow-xl">
+      <div className="flex h-2/3 w-3/4 max-w-sm flex-col items-end justify-end rounded-lg bg-black shadow-xl">
         <Display value={displayValue} />
         <CalculatorButtons onClick={handleButtonClick} />
       </div>
