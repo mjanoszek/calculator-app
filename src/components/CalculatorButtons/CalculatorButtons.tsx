@@ -6,9 +6,7 @@ interface CalculatorButtonsProps {
 }
 
 function CalculatorButtons(props: CalculatorButtonsProps) {
-  const handleClick = (label: string) => {
-    props.onClick(label);
-  };
+  const handleClick = (label: string) => props.onClick(label);
 
   return (
     <div className="max-w-96 flex flex-wrap items-center justify-center ">
