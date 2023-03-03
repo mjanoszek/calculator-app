@@ -5,21 +5,44 @@ interface ButtonProps {
   onClick: (label: string) => void;
 }
 
+ type ButtonStylesProps = { [key: string]: string };
+
+
+
 function Button(props: ButtonProps) {
-  const { label, onClick } = props;
-  const handleClick = () => {
-    props.onClick(props.label);
+  const { label } = props;
+
+  const handleClick = () => props.onClick(props.label);
+
+
+ 
+  const buttonStyles: ButtonStylesProps  = {
+    'AC': ' w-1/4 bg-dark-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '+/-' : 'w-1/4 bg-dark-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '%' : ' w-1/4 bg-dark-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '÷' : ' w-1/4 bg-orange p-5 max-[370px]:text-lg text-3xl text-white outline  outline-black outline-1',
+    '×' : ' w-1/4 bg-orange p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '-' : ' w-1/4 bg-orange p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '+' : ' w-1/4 bg-orange p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '=': ' w-1/4 bg-orange p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1 rounded-br-md',
+    '7' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '8' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '9' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '4' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '5' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '6' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '1' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '2' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '3' : ' w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '0': ' flex-1 w-1/4 rounded-bl-md bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    '.' : 'w-1/4 bg-gray p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1',
+    
+
   };
 
   return (
     <button
-      className={
-        label == '0'
-          ? 'outline-red-60 w-1/4 flex-1 rounded-bl-md bg-gray-700 p-5 text-3xl text-white outline outline-1'
-          : label == '='
-            ? 'outline-red-60 w-1/4 rounded-br-md bg-gray-700 p-5 text-3xl text-white outline outline-1'
-            : 'outline-red-60 w-1/4 bg-gray-700 p-5 text-3xl text-white outline outline-1'
-      }
+      className={buttonStyles[label]}
       onClick={handleClick}
     >
       {label}
