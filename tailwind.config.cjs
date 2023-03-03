@@ -6,7 +6,14 @@ module.exports = {
       serif: ['Montserrat', 'sans-serif'],
     },
 
-    extend: {},
+    extend: {
+      colors: {
+        'black': '#312C2C',
+        'dark-gray': '#444243',
+        'gray': '#646060',
+        'orange': '#F0A23C',
+      },
+    },
   },
   plugins: [],
 };
