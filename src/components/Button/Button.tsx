@@ -15,7 +15,7 @@ function Button(props: ButtonProps) {
   const handleClick = () => props.onClick(props.label);
 
 
-  const baseStyle = 'w-1/4 p-5 max-[370px]:text-lg text-3xl text-white outline outline-black outline-1';
+  const baseStyle = 'w-1/4 p-3 max-[370px]:text-2xl text-3xl text-white outline outline-black outline-1';
 
  
   const buttonStyles: ButtonStylesProps  = {
